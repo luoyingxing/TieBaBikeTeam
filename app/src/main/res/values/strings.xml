@@ -1,3 +1,27 @@
 <resources>
-    <string name="app_name">TieBaBikeTeam</string>
+    <string name="app_name">贴吧车队</string>
+
+    <string name="msg_network_error">当前网络不可用，请检查网络设置</string>
+    <string name="msg_network_loading">加载中…</string>
+    <string name="msg_network_loading_hard">努力加载中…</string>
+
+    <string name="personal_login_account">请输入账号</string>
+    <string name="personal_login_nickname">请输入昵称</string>
+    <string name="personal_login_password">请输入密码</string>
+    <string name="personal_login_login">登录</string>
+
+    <string name="xlistview_header_hint_normal">下拉刷新</string>
+    <string name="xlistview_header_hint_ready">松开刷新数据</string>
+    <string name="xlistview_header_hint_loading">正在加载...</string>
+    <string name="xlistview_header_last_time">上次更新时间：</string>
+    <string name="xlistview_footer_hint_normal">查看更多</string>
+    <string name="xlistview_footer_hint_ready">松开载入更多</string>
+
+    <string name="about_us_string_1">贴吧车队&#160;&#160;版权所有</string>
+    <string name="about_us_string_2">Copyrightⓒ广西省防城港贴吧车队</string>
+    <string name="about_us_string_3">All Rights Reserved</string>
+    <string name="about_us_string_one">364677713@qq.com</string>
+    <string name="about_us_string_two">13977062882</string>
+    <string name="about_us_string_three">364677713</string>
+    <string name="about_us_string_four">13977062882</string>
 </resources>
