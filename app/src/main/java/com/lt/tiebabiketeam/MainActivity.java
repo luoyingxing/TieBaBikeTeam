@@ -9,6 +9,7 @@ import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
@@ -19,8 +20,6 @@ import com.lt.tiebabiketeam.frame.network.ApiRequest;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
     private long mExitTime;
-    private TextView mPhoneOneTV;
-    private TextView mPhoneTwoTV;
     private TextView mRemainCountTV;
     private WebView mWebView;
 
@@ -40,20 +39,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     }
 
     @Override
-    protected void onStart() {
-        super.onStart();
-    }
-
-    @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.tv_home_phone_one:
-                callPhone("2228080");
+            case R.id.ll_home_phone:
+                callPhone();
                 break;
-            case R.id.tv_home_phone_two:
-                callPhone("13977062882");
-                break;
-            case R.id.tv_home_count:
+            case R.id.ll_home_count:
                 loadBikeNumber();
                 break;
         }
@@ -63,14 +54,13 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     @SuppressLint("SetJavaScriptEnabled")
     private void findView() {
-        mPhoneOneTV = (TextView) findViewById(R.id.tv_home_phone_one);
-        mPhoneTwoTV = (TextView) findViewById(R.id.tv_home_phone_two);
+        LinearLayout mLayoutPhone = (LinearLayout) findViewById(R.id.ll_home_phone);
+        LinearLayout mLayoutCount = (LinearLayout) findViewById(R.id.ll_home_count);
         mRemainCountTV = (TextView) findViewById(R.id.tv_home_count);
         mWebView = (WebView) findViewById(R.id.wv_home_view);
 
-        mPhoneOneTV.setOnClickListener(this);
-        mPhoneTwoTV.setOnClickListener(this);
-        mRemainCountTV.setOnClickListener(this);
+        mLayoutPhone.setOnClickListener(this);
+        mLayoutCount.setOnClickListener(this);
 
         mWebView.requestFocusFromTouch();
         mWebView.getSettings().setJavaScriptEnabled(true);
@@ -110,13 +100,13 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
         mWebView.loadUrl(ApiURL.API_HOME_URL);
 
-        mDialog = ProgressDialog.show(MainActivity.this, "", "");
+        mDialog = ProgressDialog.show(MainActivity.this, "", "正在加载...");
         mDialog.setCanceledOnTouchOutside(true);
     }
 
-    private void callPhone(String phone) {
+    private void callPhone() {
         Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse("tel:" + phone));
+        intent.setData(Uri.parse("tel:2228080"));
         startActivity(intent);
     }
 
@@ -126,7 +116,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             protected void onSuccess(RentNumber rentNumber) {
                 mRemainCountTV.setText(String.valueOf(rentNumber.getRemainCount()));
             }
-
         }.get();
     }
 
