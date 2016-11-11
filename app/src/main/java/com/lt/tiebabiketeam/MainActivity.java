@@ -7,7 +7,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebChromeClient;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.TextView;
@@ -16,7 +15,6 @@ import android.widget.TextView;
 import com.lt.tiebabiketeam.entity.RentNumber;
 import com.lt.tiebabiketeam.frame.BaseActivity;
 import com.lt.tiebabiketeam.frame.network.ApiRequest;
-import com.lt.tiebabiketeam.frame.ui.ScrollWebView;
 
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
@@ -81,10 +79,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         // 设置出现缩放工具
         mWebView.getSettings().setBuiltInZoomControls(true);
         // 扩大比例的缩放
-        mWebView.getSettings().setUseWideViewPort(true);
+//        mWebView.getSettings().setUseWideViewPort(true);
         // 自适应屏幕
-        mWebView.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
-        mWebView.getSettings().setLoadWithOverviewMode(true);
+//        mWebView.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
+//        mWebView.getSettings().setLoadWithOverviewMode(true);
 
         mWebView.setWebViewClient(new WebViewClient() {
 
