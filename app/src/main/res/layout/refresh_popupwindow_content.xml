@@ -7,11 +7,33 @@
     android:orientation="vertical"
     android:padding="15dp">
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
         android:contentDescription="@string/app_name"
         android:gravity="center"
-        android:src="@mipmap/ic_launcher" />
+        android:src="@mipmap/image_show_dialog" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center"
+        android:text="点击“客服电话”可以直接拨打哦"
+        android:textColor="@color/primary_orange" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="点击“剩余可租车辆”可以刷新数据哦"
+        android:textColor="@color/primary_orange" />
 
 </LinearLayout>
